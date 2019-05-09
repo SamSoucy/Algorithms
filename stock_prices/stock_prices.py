@@ -6,23 +6,27 @@ def find_max_profit(prices):
   max_profit = -10
   buy_price = 0
   sell_price = 0
-
+  
   change_buy_index = True
-
-  for i in range(0, len(prices) - 1):
-    sell_price = prices[i + 1]
-    if change_buy_index:
-          buy_price = prices[i]
+  
+  for i in range(0, len(prices)-1):
+    sell_price = prices[i+1]
+    if change_buy_index: 
+      buy_price = prices[i]
+    
     if sell_price < buy_price:
-          change_buy_index = True
-          continue
+      change_buy_index = True 
+      continue
+    
     else:
-        temp_profit = sell_price - buy_price
-        if temp_profit > max_profit:
-              max_profit = temp_profit
-        change_buy_index = False
-
+      temp_profit = sell_price - buy_price
+      if temp_profit > max_profit:
+        max_profit = temp_profit
+      change_buy_index = False
+      
   return max_profit
+   
+print(find_max_profit)
  
 
 
